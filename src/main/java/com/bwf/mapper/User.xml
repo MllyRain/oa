@@ -11,6 +11,12 @@
         select * from `user` where user_id = #{id}
     </select>
     
+    <select id="getUserByUsernameAndPassword" 
+    	parameterType="com.bwf.entity.User" 
+    	resultType="com.bwf.entity.User">
+    	select * from `user` where username = #{username} and password = #{password}
+   	</select>
+    
     <!-- 增加一个 user -->
     <insert id="add" parameterType="com.bwf.entity.User" useGeneratedKeys="true" keyProperty="user_id">
     	insert into `user` values ( null , #{username} , #{password} , #{nickname} , #{leaderId}  )
