@@ -2,6 +2,8 @@ package com.bwf.controller;
 
 
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +27,11 @@ public class UserController {
 	
 	@GetMapping("login")
 	public String login(){
-		return "user/login";
+		return "user/login"; 
 	}
 	
 	@PostMapping("doLogin")
-	public void doLogin(User user){				
+	public String doLogin(User user ,HttpSession session){				
 		logger.info("{}, {}" , user.getUsername() , user.getPassword());		
 		//把密码进行加密
 		user.setPassword(StringUtils.md5(user.getPassword()));
@@ -42,15 +44,15 @@ public class UserController {
 			logger.info("登录失败，用户名或密码错误");
 			//带着错误信息，跳转到登录界面
 			
-			//return "redirect:/user/login";
+			return "redirect:/user/login？error=1";
 		}else{
 			//登录成功
 			logger.info("登录成功");
 
 			//写入session
-			
+			session.setAttribute("user", loginUser);
 			//跳转到首页
-			//return "redirect:/index/index";			
+			return "redirect:/index";			
 		} 
 
 	}
