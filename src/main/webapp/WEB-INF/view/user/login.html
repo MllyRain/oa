@@ -20,6 +20,30 @@
         }
 
 		</style>
+		
+		<script type="text/javascript">
+			$(function(){
+					if(location.href.indexOf('error')!=-1){
+					//有错误
+					//获取errorCode
+					var error=${error};
+					var errMessage="";
+					
+					switch(error){
+						case 1:
+							errMessage="用户名或密码错误";
+							break;
+						default:
+						    errMessage="未知错误!";
+						    break;
+					}
+					$('#errorMessage').html(errMessage);
+					
+					   $('#openModal').trigger('click');
+					}
+			
+			});		
+		</script>
 	</head>
 	<body>
 		
@@ -39,6 +63,8 @@
                         欢迎登录管理系统
                     </div>
                     <div class="panel-body">
+                    
+                 
 
                         <input type="text" name="username" class="form-control" placeholder="账户名称"/>
                         <div style="height:10px;"></div>
@@ -53,8 +79,23 @@
             </form>
         </div>
     </div>
-		
-	
+		<!-- 按钮触发模态框 -->
+		   <input id="openModal" type="hidden" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" value="开始演示模态框"/>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel">登录失败</h4>
+		            </div>
+		            <div id="errorMessage" class="modal-body">发生错误</div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">确认</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>	
 		
 	</body>
 </html>

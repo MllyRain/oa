@@ -63,13 +63,13 @@
             		<li><a href="javascript:void(0)" class="nav-menu-item"><img src="img/18.png" height="20px" /> 锁屏</a></li>
             		<li>
             			<a href="" class="dropdown dropdown-toggle nav-dropdown-toggle" data-toggle="dropdown">
-            				<img src="img/face.jpg" height="20px" class="img img-circle" /> 博为峰UI模板 <span class="caret"></span>
+            				<img src="${rc.contextPath}/img/avaters/${user.avater}" height="20px" class="img img-circle" /> ${user.nickname} <span class="caret"></span>
             			</a>
             			<ul class="dropdown-menu nav-dropdown-menu">
             				<li class="dropdown-menu-item nav-dropdown-menu-item"><a href="" style="color: #fff;"><img src="img/48323.png" height="20px" class="img img-circle"/>&nbsp;&nbsp;&nbsp;&nbsp;个人资料 </a></li>
             				<li class="dropdown-menu-item nav-dropdown-menu-item"><a href="" style="color: #fff;"><img src="img/65323.png" height="20px" class="img img-circle"/>&nbsp;&nbsp;&nbsp;&nbsp;修改密码 </a></li>
             				<li class="dropdown-menu-item nav-dropdown-menu-item"><a href="" style="color: #fff;"><img src="img/64323.png" height="20px" class="img img-circle"/>&nbsp;&nbsp;&nbsp;&nbsp;更换皮肤 </a></li>
-            				<li class="dropdown-menu-item nav-dropdown-menu-item"><a href="" style="color: #fff;"><img src="img/62323.png" height="20px" class="img img-circle"/>&nbsp;&nbsp;&nbsp;&nbsp;安全退出 </a></li>
+            				<li class="dropdown-menu-item nav-dropdown-menu-item"><a href="${rc.contextPath}/user/logout" style="color: #fff;"><img src="img/62323.png" height="20px" class="img img-circle"/>&nbsp;&nbsp;&nbsp;&nbsp;安全退出 </a></li>
             			</ul>
             		</li>
             	</ul>
@@ -90,7 +90,7 @@
         -->
 	    <div id="panel-left-top" class="hidden-xs" align="center">
 	      	
-	      	<img id="face" src="img/face.jpg" class="img img-circle img-responsive img-thumbnail img-face" width="100px" style="margin-top: 20px;"/>
+	      	<img id="face" src="${rc.contextPath}/img/avaters/${user.avater}" class="img img-circle img-responsive img-thumbnail img-face" width="100px" style="margin-top: 20px;"/>
 	      	
 	      	<div style="margin-top: 10px; color: #ccc;">
 	      	    <img src="img/j15.png" id="face-switch" height="25px" class="img img-circle hand switch-on" style="opacity: 0.7;"/>&nbsp;&nbsp;博为峰UI框架

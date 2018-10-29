@@ -8,7 +8,7 @@ public class User {
 
 	private String password;
 
-	private String nickname;
+	private String nickname; 
 
 	private String avater;
 

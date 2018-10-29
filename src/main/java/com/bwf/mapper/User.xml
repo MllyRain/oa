@@ -19,7 +19,7 @@
     
     <!-- 增加一个 user -->
     <insert id="add" parameterType="com.bwf.entity.User" useGeneratedKeys="true" keyProperty="user_id">
-    	insert into `user` values ( null , #{username} , #{password} , #{nickname} , #{leaderId}  )
+    	insert into `user` values ( null , #{username} , #{password} , #{nickname} , #{leaderId},#{avater}  )
     </insert>
     
     <!-- 删除 一个 user -->
@@ -32,7 +32,8 @@
     	 username = #{username} ,
     	 password = #{password} , 
     	 nickname = #{nickname} , 
-    	 leader_id= #{leaderId} ,     	 
+    	 leader_id= #{leaderId} , 
+    	 avater=#{avater} ,   	 
     	where user_id = #{userId}
     </update>
     
